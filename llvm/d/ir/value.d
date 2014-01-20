@@ -286,204 +286,204 @@ package Value LLVMValueRef_to_Value(LLVMContext C, LLVMValueRef value)
 					{
 						if(LLVMIsADbgDeclareInst(value) !is null)
 						{
-							//return new DbgDeclareInst(type, value);
+							return new DbgDeclareInst(type, value);
 						}
 						else
 						{
-							//return new DbgInfoIntrinsic(type, value);
+							return new DbgInfoIntrinsic(type, value);
 						}
 					}
 					else if(LLVMIsAMemIntrinsic(value) !is null)
 					{
 						if(LLVMIsAMemCpyInst(value) !is null)
 						{
-							//return new MemCpyInst(type, value);
+							return new MemCpyInst(type, value);
 						}
 						else if(LLVMIsAMemMoveInst(value) !is null)
 						{
-							//return new MemMoveInst(type, value);
+							return new MemMoveInst(type, value);
 						}
 						else if(LLVMIsAMemSetInst(value) !is null)
 						{
-							//return new MemSetInst(type, value);
+							return new MemSetInst(type, value);
 						}
 						else
 						{
-							//return new MemIntrinsic(type, value);
+							return new MemIntrinsic(type, value);
 						}
 					}
 					else
 					{
-						//return new IntrinsicInst(type, value);
+						return new IntrinsicInst(type, value);
 					}
 				}
 				else
 				{
-					//return new CallInst(type, value);
+					return new CallInst(type, value);
 				}
 			}
 			else if(LLVMIsACmpInst(value) !is null)
 			{
 				if(LLVMIsAFCmpInst(value) !is null)
 				{
-					//return new FCmpInst(type, value);
+					return new FCmpInst(type, value);
 				}
 				else if(LLVMIsAICmpInst(value) !is null)
 				{
-					//return new ICmpInst(type, value);
+					return new ICmpInst(type, value);
 				}
 				else
 				{
-					//return new CmpInst(type, value);
+					return new CmpInst(type, value);
 				}
 			}
 			else if(LLVMIsAExtractElementInst(value) !is null)
 			{
-				//return new ExtractElementInst(type, value);
+				return new ExtractElementInst(type, value);
 			}
 			else if(LLVMIsAGetElementPtrInst(value) !is null)
 			{
-				//return new GetElementPtrInst(type, value);
+				return new GetElementPtrInst(type, value);
 			}
 			else if(LLVMIsAInsertElementInst(value) !is null)
 			{
-				//return new InsertElementInst(type, value);
+				return new InsertElementInst(type, value);
 			}
 			else if(LLVMIsAInsertValueInst(value) !is null)
 			{
-				//return new InsertValueInst(type, value);
+				return new InsertValueInst(type, value);
 			}
 			else if(LLVMIsALandingPadInst(value) !is null)
 			{
-				//return new LandingPadInst(type, value);
+				return new LandingPadInst(type, value);
 			}
 			else if(LLVMIsAPHINode(value) !is null)
 			{
-				//return new PHINode(type, value);
+				return new PHINode(type, value);
 			}
 			else if(LLVMIsASelectInst(value) !is null)
 			{
-				//return new SelectInst(type, value);
+				return new SelectInst(type, value);
 			}
 			else if(LLVMIsAShuffleVectorInst(value) !is null)
 			{
-				//return new ShuffleVectorInst(type, value);
+				return new ShuffleVectorInst(type, value);
 			}
 			else if(LLVMIsAStoreInst(value) !is null)
 			{
-				//return new StoreInst(type, value);
+				return new StoreInst(type, value);
 			}
 			else if(LLVMIsATerminatorInst(value) !is null)
 			{
 				if(LLVMIsABranchInst(value) !is null)
 				{
-					//return new BranchInst(type, value);
+					return new BranchInst(type, value);
 				}
 				else if(LLVMIsAIndirectBrInst(value) !is null)
 				{
-					//return new IndirectBrInst(type, value);
+					return new IndirectBrInst(type, value);
 				}
 				else if(LLVMIsAInvokeInst(value) !is null)
 				{
-					//return new InvokeInst(type, value);
+					return new InvokeInst(type, value);
 				}
 				else if(LLVMIsAReturnInst(value) !is null)
 				{
-					//return new ReturnInst(type, value);
+					return new ReturnInst(type, value);
 				}
 				else if(LLVMIsASwitchInst(value) !is null)
 				{
-					//return new SwitchInst(type, value);
+					return new SwitchInst(type, value);
 				}
 				else if(LLVMIsAUnreachableInst(value) !is null)
 				{
-					//return new UnreachableInst(type, value);
+					return new UnreachableInst(type, value);
 				}
 				else if(LLVMIsAResumeInst(value) !is null)
 				{
-					//return new ResumeInst(type, value);
+					return new ResumeInst(type, value);
 				}
 				else
 				{
-					//return new TerminatorInst(type, value);
+					return new TerminatorInst(type, value);
 				}
 			}
 			else if(LLVMIsAUnaryInstruction(value) !is null)
 			{
 				if(LLVMIsAAllocaInst(value) !is null)
 				{
-					//return new AllocaInst(type, value);
+					return new AllocaInst(type, value);
 				}
 				else if(LLVMIsACastInst(value) !is null)
 				{
 					if(LLVMIsABitCastInst(value) !is null)
 					{
-						//return new BitCastInst(type, value);
+						return new BitCastInst(type, value);
 					}
 					else if(LLVMIsAFPExtInst(value) !is null)
 					{
-						//return new FPExtInst(type, value);
+						return new FPExtInst(type, value);
 					}
 					else if(LLVMIsAFPToSIInst(value) !is null)
 					{
-						//return new FPToSIInst(type, value);
+						return new FPToSIInst(type, value);
 					}
 					else if(LLVMIsAFPToUIInst(value) !is null)
 					{
-						//return new FPToUIInst(type, value);
+						return new FPToUIInst(type, value);
 					}
 					else if(LLVMIsAFPTruncInst(value) !is null)
 					{
-						//return new FPTruncInst(type, value);
+						return new FPTruncInst(type, value);
 					}
 					else if(LLVMIsAIntToPtrInst(value) !is null)
 					{
-						//return new IntToPtrInst(type, value);
+						return new IntToPtrInst(type, value);
 					}
 					else if(LLVMIsAPtrToIntInst(value) !is null)
 					{
-						//return new PtrToIntInst(type, value);
+						return new PtrToIntInst(type, value);
 					}
 					else if(LLVMIsASExtInst(value) !is null)
 					{
-						//return new SExtInst(type, value);
+						return new SExtInst(type, value);
 					}
 					else if(LLVMIsASIToFPInst(value) !is null)
 					{
-						//return new SIToFPInst(type, value);
+						return new SIToFPInst(type, value);
 					}
 					else if(LLVMIsATruncInst(value) !is null)
 					{
-						//return new TruncInst(type, value);
+						return new TruncInst(type, value);
 					}
 					else if(LLVMIsAUIToFPInst(value) !is null)
 					{
-						//return new UIToFPInst(type, value);
+						return new UIToFPInst(type, value);
 					}
 					else if(LLVMIsAZExtInst(value) !is null)
 					{
-						//return new ZExtInst(type, value);
+						return new ZExtInst(type, value);
 					}
 					else
 					{
-						//return new CastInst(type, value);
+						return new CastInst(type, value);
 					}
 				}
 				else if(LLVMIsAExtractValueInst(value) !is null)
 				{
-					//return new ExtractValueInst(type, value);
+					return new ExtractValueInst(type, value);
 				}
 				else if(LLVMIsALoadInst(value) !is null)
 				{
-					//return new LoadInst(type, value);
+					return new LoadInst(type, value);
 				}
 				else if(LLVMIsAVAArgInst(value) !is null)
 				{
-					//return new VAArgInst(type, value);
+					return new VAArgInst(type, value);
 				}
 				else
 				{
-					//return new UnaryInstruction(type, value);
+					return new UnaryInstruction(type, value);
 				}
 			}
 			else
@@ -536,54 +536,54 @@ User -- added
 			GlobalVariable -- added
 		UndefValue -- added
 	Instruction -- added
-		AtomicCmpXchInst -- missing LLVMIsA* check
-		AtomicRMWInst -- missing LLVMIsA* check
+		AtomicCmpXchInst -- not added, missing LLVMIsA* check
+		AtomicRMWInst -- not added, missing LLVMIsA* check
 		BinaryOperator -- added
-		CallInst
-			IntrinsicInst
-				DbgInfoIntrinsic
-					DbgDeclareInst
-				MemIntrinsic
-					MemCpyInst
-					MemMoveInst
-					MemSetInst
-		CmpInst
-			FCmpInst
-			ICmpInst
-		ExtractElementInst
-		GetElementPtrInst
-		InsertElementInst
-		InsertValueInst
-		LandingPadInstOperator
-		PHINode
-		SelectInst
-		ShuffleVectorInst
-		StoreInst
-		TerminatorInst
-			BranchInst
-			IndirectBrInst
-			InvokeInst
-			ReturnInst
-			SwitchInst
-			UnreachableInst
-			ResumeInst
-		UnaryInstruction
-			AllocaInst
-			CastInst
-				AddrSpaceCastInst
-				BitCastInst
-				FPExtInst
-				FPToSIInst
-				FPToUIInst
-				FPTruncInst
-				IntToPtrInst
-				PtrToIntInst
-				SExtInst
-				SIToFPInst
-				TruncInst
-				UIToFPInst
-				ZExtInst
-			ExtractValueInst
-			LoadInst
-			VAArgInst
+		CallInst -- added
+			IntrinsicInst -- added
+				DbgInfoIntrinsic -- added
+					DbgDeclareInst -- added
+				MemIntrinsic -- added
+					MemCpyInst -- added
+					MemMoveInst -- added
+					MemSetInst -- added
+		CmpInst -- added
+			FCmpInst -- added
+			ICmpInst -- added
+		ExtractElementInst -- added
+		GetElementPtrInst -- added
+		InsertElementInst -- added
+		InsertValueInst -- added
+		LandingPadInst -- added
+		PHINode -- added
+		SelectInst -- added
+		ShuffleVectorInst -- added
+		StoreInst -- added
+		TerminatorInst -- added
+			BranchInst -- added
+			IndirectBrInst -- added
+			InvokeInst -- added
+			ReturnInst -- added
+			SwitchInst -- added
+			UnreachableInst -- added
+			ResumeInst -- added
+		UnaryInstruction -- added
+			AllocaInst -- added
+			CastInst -- added
+				AddrSpaceCastInst -- not added (yet), because 3.4+ only
+				BitCastInst -- added
+				FPExtInst -- added
+				FPToSIInst -- added
+				FPToUIInst -- added
+				FPTruncInst -- added
+				IntToPtrInst -- added
+				PtrToIntInst -- added
+				SExtInst -- added
+				SIToFPInst -- added
+				TruncInst -- added
+				UIToFPInst -- added
+				ZExtInst -- added
+			ExtractValueInst -- added
+			LoadInst -- added
+			VAArgInst -- added
 +/
