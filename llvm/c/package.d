@@ -72,7 +72,7 @@ public struct LLVM
 					writefln("LLVM shared library \"%s\" sucessfully loaded", path ~ file);
 				}
 			}
-			else debug
+			else
 			{
 				import std.stdio;
 				import std.cstream;
@@ -91,7 +91,9 @@ public struct LLVM
 
 shared static this()
 {
-	LLVM.load(null);
+	//LLVM.load(null);
+	//TEMP
+	LLVM.loadFromPath("/usr/local/homebrew/Cellar/llvm/3.4/lib/", "libLLVM-3.4.dylib");
 }
 
 shared static ~this()
