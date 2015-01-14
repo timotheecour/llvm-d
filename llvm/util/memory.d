@@ -57,6 +57,7 @@ void destruct(T)(ref T* obj) if(!is(T == class))
 	obj = null;
 }
 
+//TODO: instead, use toStringz?
 immutable(char)* toCString(const(char)[] s)
 {
 	auto copy = construct!char(s.length + 1);
