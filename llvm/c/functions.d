@@ -1047,6 +1047,7 @@ package enum string[][string] LLVMC_Functions = [
 	"LLVMGenericValueIntWidth" : ["uint function(LLVMGenericValueRef GenValRef)"],
 	"LLVMGenericValueToInt" : ["ulong function(LLVMGenericValueRef GenVal, LLVMBool IsSigned)"],
 	"LLVMGenericValueToPointer" : ["void* function(LLVMGenericValueRef GenVal)"],
+	//TODO:here and elsewhere, why return double instead of real for example?
 	"LLVMGenericValueToFloat" : ["double function(LLVMTypeRef TyRef, LLVMGenericValueRef GenVal)"],
 	"LLVMDisposeGenericValue" : ["void function(LLVMGenericValueRef GenVal)"],
 	"LLVMCreateExecutionEngineForModule" : ["LLVMBool function(LLVMExecutionEngineRef* OutEE, LLVMModuleRef M, char** OutError)"],
