@@ -91,9 +91,10 @@ public struct LLVM
 
 shared static this()
 {
-	//LLVM.load(null);
-	//TEMP
-	LLVM.loadFromPath("/usr/local/homebrew/Cellar/llvm/3.4/lib/", "libLLVM-3.4.dylib");
+	version(OSX)//TEMP
+		LLVM.loadFromPath("/usr/local/homebrew/Cellar/llvm/3.4/lib/", "libLLVM-3.4.dylib");
+	else
+		LLVM.load(null);
 }
 
 shared static ~this()
