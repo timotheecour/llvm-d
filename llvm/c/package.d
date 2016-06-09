@@ -1,11 +1,9 @@
 
 module llvm.c;
 
-private
-{
-	import llvm.util.templates;
-	import llvm.util.shlib;
-}
+import llvm.util.templates;
+import llvm.util.shlib;
+import std.conv:to;
 
 public
 {
@@ -91,8 +89,15 @@ public struct LLVM
 
 shared static this()
 {
-	version(OSX)//TEMP
-		LLVM.loadFromPath("/usr/local/homebrew/Cellar/llvm/3.4/lib/", "libLLVM-3.4.dylib");
+	version(OSX){
+		//TEMP
+		///Users/timothee/homebrew/Cellar/llvm38/3.8.0/lib/llvm-3.8/lib/libLLVM-3.8.0.dylib
+		import common:envs;
+		import std.path;
+		auto file=envs.llvm_sh_lib_F;
+		LLVM.loadFromPath(file.dirName, file.baseName);
+		//LLVM.loadFromPath("/usr/local/homebrew/Cellar/llvm/3.4/lib/", "libLLVM-3.4.dylib");
+	}
 	else
 		LLVM.load(null);
 }

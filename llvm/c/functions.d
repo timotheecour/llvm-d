@@ -9,6 +9,8 @@ private
 	import llvm.c.types;
 }
 
+import std.conv:to;
+
 extern(System)
 {
 	mixin(MixinMap(LLVMC_Functions, delegate string(string symbol, string[] signature) {
